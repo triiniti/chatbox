@@ -2,11 +2,11 @@
     "name": "alespo/chatbox",
     "description": "",
     "keywords": [
-        "chat",
-        "box",
-        "imagine"
+        "chatbox",
+        "live",
+        "triiniti"
     ],
-    "homepage": "https://www.imagine.si/",
+    "homepage": "",
     "type": "project",
     "version": "0.0.1",
     "require-dev": {
@@ -28,7 +28,7 @@
     },
    "autoload": {
         "psr-4": {
-            "Imagine\\App\\": "src/"
+            "Triiniti\\App\\": "src/"
         }
     },
     "authors": [
