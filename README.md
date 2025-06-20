@@ -44,24 +44,27 @@
 ## Getting Started
 
 1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/yourusername/triniiti-chatbox.git
-    cd triniiti-chatbox
-    ```
+
+   ```sh
+   git clone https://github.com/yourusername/triniiti-chatbox.git
+   cd triniiti-chatbox
+   ```
 
 2. **Set up environment variables:**
-    - Copy `.env.example` to `.env` and fill in required values:
-        - `DB_NAME`
-        - `DB_USER`
-        - `DB_PASSWORD`
-        - `GITHUB_OAUTH_CLIENT_ID`
-        - `GITHUB_OAUTH_CLIENT_SECRET`
-        - `APP_URL` (e.g., `http://localhost`)
+
+   - Copy `.env.example` to `.env` and fill in required values:
+     - `DB_NAME`
+     - `DB_USER`
+     - `DB_PASSWORD`
+     - `GITHUB_OAUTH_CLIENT_ID`
+     - `GITHUB_OAUTH_CLIENT_SECRET`
+     - `APP_URL` (e.g., `http://localhost`)
 
 3. **Build and start the containers:**
-    ```sh
-    docker-compose up --build
-    ```
+
+   ```sh
+   docker-compose up --build
+   ```
 
 4. **Access the app:**  
    Visit [http://localhost](http://localhost) and log in with your GitHub account.
@@ -69,6 +72,7 @@
 ## Services
 
 ### Web (Nginx)
+
 - **Image:** nginx
 - **Ports:** 80:80
 - **Volumes:**
@@ -77,6 +81,7 @@
 - **Depends on:** php, db
 
 ### PHP (FPM)
+
 - **Build:** `.docker`
 - **Volumes:**
   - PHP config: `./.docker/conf/php/php.ini`
@@ -86,17 +91,19 @@
 - **Note:** PHP-FPM max children increased for smooth performance.
 
 ### Composer
+
 - **Image:** composer
 - **Command:** `install`
 - **Volumes:** `.:/app`
 
 ### Database (PostgreSQL)
+
 - **Image:** postgres:10.1
 - **Ports:** 5432:5432
 - **Volumes:** `./.docker/conf/postgres/:/docker-entrypoint-initdb.d/`
-- **Environment variables:**  
-  - `POSTGRES_DB`  
-  - `POSTGRES_USER`  
+- **Environment variables:**
+  - `POSTGRES_DB`
+  - `POSTGRES_USER`
   - `POSTGRES_PASSWORD`
 
 ## Configuration
@@ -108,17 +115,17 @@
 ## Usage
 
 - **Start/restart the app:**
-    ```sh
-    docker-compose up -d
-    ```
+  ```sh
+  docker-compose up -d
+  ```
 - **Stop the app:**
-    ```sh
-    docker-compose down
-    ```
+  ```sh
+  docker-compose down
+  ```
 - **Install/update PHP dependencies:**
-    ```sh
-    docker-compose run --rm composer install
-    ```
+  ```sh
+  docker-compose run --rm composer install
+  ```
 
 ## Security
 
@@ -130,13 +137,12 @@
 ## Troubleshooting
 
 - **Permissions:** Ensure your user has access to project files.
-- **Logs:**  
-    ```sh
-    docker-compose logs <service>
-    ```
+- **Logs:**
+  ```sh
+  docker-compose logs <service>
+  ```
 - **Database:** If DB fails to initialize, verify `.env` and volume paths.
 
 ## License
 
-[MIT](LICENSE)  
-_Replace with your license if different._
+[MIT](LICENSE)
