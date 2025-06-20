@@ -1,4 +1,4 @@
-![Project Logo](public/assets/img/logo_light.png)
+<img src="public/assets/img/logo_light.png" alt="Project Logo" width="200"/>
 
 
 # Triniiti ChatBox
