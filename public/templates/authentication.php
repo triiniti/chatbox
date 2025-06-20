@@ -1,0 +1,1 @@
+<?php $this->layout('template', ['title' => 'Authentication']) ?>
