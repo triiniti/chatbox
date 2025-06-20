@@ -20,7 +20,7 @@ class Chat
         $m = new Message();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $csrf->validate('chatbox-form')) {
             $count = $m->count();
-            $lastSender = $m->lastSenderId();
+            $lastSender = ($count > 0) ? $m->lastSenderId() : $_SESSION['user_id'];
             $pos = ($lastSender == $_SESSION['user_id']) ? 'left' : 'right';
             //$pos = ($count % 2) == 0 ? 'left' : 'right';
             $m = new Message($_POST['message'], $_SESSION['user_id'], date('Y-m-d H:i:s'), $pos);

@@ -24,6 +24,7 @@ while (1) {
 
   try {
     if ($result) {
+      $user_id = $_GET['user_id'] ?? null;
       $data = get_object_vars(json_decode($result['payload']));
       $sender = $data['data']->sender_id;
       $sender = $dbconn->query("SELECT avatar FROM users WHERE id = $sender")->fetch(PDO::FETCH_ASSOC);
@@ -31,8 +32,9 @@ while (1) {
       $message = $data['data']->content;
 
       $pos = 'left'; // default position
-      $lastParticipant = $dbconn->query("SELECT sender_id FROM messages ORDER BY id DESC LIMIT 1")->fetch(PDO::FETCH_COLUMN);
-      $pos = ($lastParticipant == $data['data']->sender_id) ? 'left' : 'right'; // alternate position based on participant count
+      //$lastParticipant = $dbconn->query("SELECT sender_id FROM messages ORDER BY id DESC LIMIT 1")->fetch(PDO::FETCH_COLUMN);
+      //$pos = ($lastParticipant == $data['data']->sender_id) ? 'left' : 'right'; // alternate position based on participant count
+      $pos = ($user_id == $data['data']->sender_id) ? 'left' : 'right'; // position based on user_id
       $data = sprintf('data: {"sender": "%s", "message": "%s", "pos": "%s"}', $sender, $message, $pos);
       echo "event: ping\n";
       //echo 'data: {"sender": "' . $sender . '", "message": "' . $message . ', "pos": "' . $pos . '"}' . "\n\n";
