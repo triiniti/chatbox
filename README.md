@@ -1,3 +1,6 @@
+![Project Logo](public/assets/img/logo_light.png)
+
+
 # Triniiti ChatBox
 
 **Triniiti ChatBox** is a web chat application where authenticated users can communicate in real time. User login is handled securely via GitHub OAuth. The backend is built with PHP (using Composer for dependencies), and a PostgreSQL database; everything runs in a modern Docker Compose stack for easy development and deployment.
