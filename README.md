@@ -1,4 +1,4 @@
-<img src="public/assets/img/logo_light.png" alt="Project Logo" width="200"/>
+<img src="public/assets/img/logo_light.png" alt="Project Logo" width="100"/>
 
 
 # Triniiti ChatBox
