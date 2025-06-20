@@ -47,8 +47,8 @@ GITHUB_OAUTH_CLIENT_SECRET=your_client_secret_here
 
 Ensure the **Authorization callback URL** in your GitHub OAuth app settings matches the redirect URI used in your application’s OAuth flow.  
 For example:  
-- Local development: `http://localhost/auth/callback`
-- Production: `https://your-domain.com/auth/callback`
+- Local development: `http://localhost/authenticate`
+- Production: `https://your-domain.com/authenticate`
 
 ---
 
